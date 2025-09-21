@@ -15,7 +15,7 @@ This project uses **MediaPipe** and **OpenCV** to detect faces in images, videos
 ---
 
 ## Requirements
-Make sure you have Python 3.x installed, then install dependencies:
+Make sure you have Python 3.9 installed, then install dependencies:
 
 ```bash
 pip install opencv-python mediapipe
