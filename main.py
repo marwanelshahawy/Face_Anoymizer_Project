@@ -23,8 +23,8 @@ def process_img(img,face_detection):
         print("No face detected")
     return img
 args = argparse.ArgumentParser()
-args.add_argument("--mode",default='image')
-args.add_argument("--filePath",default=os.path.join(os.getcwd(),'testImg.png'))
+args.add_argument("--mode",default='video')
+args.add_argument("--filePath",default=os.path.join(os.getcwd(),'testVideo.mp4'))
 args = args.parse_args()
 
 mp_face_detection = mp.solutions.face_detection
@@ -44,6 +44,14 @@ with mp_face_detection.FaceDetection(model_selection=0,min_detection_confidence=
         img = process_img(img,face_detection)
         cv2.imshow('Image', img)
         cv2.waitKey(0)
-    # save image
+    elif args.mode in ['video']:
+        video = cv2.VideoCapture(args.filePath)
+        ret =True
+        while ret:
+            ret, frame = video.read()
+            frame =process_img(frame,face_detection)
+            if ret:
+                cv2.imshow('video', frame)
+                cv2.waitKey(40)
 webcam.release()
 cv2.destroyAllWindows()
