@@ -1,21 +1,21 @@
-# Face Blur using MediaPipe & OpenCV
+# Face Blur with MediaPipe & OpenCV
 
-This project uses **MediaPipe** and **OpenCV** to detect faces in images or webcam video streams and apply a blur effect to them. It's useful for privacy-focused applications like anonymizing faces in videos or photos.
-
-## 📌 Features
-
-- Detects faces using MediaPipe's face detection model
-- Blurs detected faces
-- Works with:
-  - Static images
-  - Live webcam feed
-- Supports saving or displaying the processed images
+This project uses **MediaPipe** and **OpenCV** to detect faces in images, videos, or webcam streams and blur them for privacy purposes. It also draws a bounding box around each detected face.
 
 ---
 
-## 🔧 Requirements
+## Features
+- Detects faces using **MediaPipe Face Detection**.
+- Blurs detected faces for anonymization.
+- Supports three modes:
+  - **image** → process a single image.
+  - **video** → process a video file.
+  - **webcam** → process live webcam feed.
 
-Install the required Python packages using `pip`:
+---
+
+## Requirements
+Make sure you have Python 3.x installed, then install dependencies:
 
 ```bash
 pip install opencv-python mediapipe
